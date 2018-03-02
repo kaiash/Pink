@@ -4,6 +4,8 @@ global.$ = {
 	},
 	gulp: require('gulp'),
     fs: require('fs'),
+    realFavicon: require ('gulp-real-favicon'),
+    FAVICON_DATA_FILE: 'faviconData.json',
 	browserSync: require('browser-sync').create(),
     imageminJpegRecompress: require('imagemin-jpeg-recompress'),
     imageminPngQuant : require('imagemin-pngquant'),
@@ -24,12 +26,13 @@ $.path.task.forEach(function (taskPath) {
 
 $.gulp.task('dev',$.gulp.series(
     'clean',
-	$.gulp.parallel('style:dev', 'html:dev', 'jshint', 'js:dev', 's-png:dev', 'svg', 'img:dev', 'fonts')));
+    $.gulp.parallel('style:dev', 'html:dev', 'jshint', 'js:dev', 's-png:dev', 'svg', 'img:dev', 'fonts')));
 
 
 $.gulp.task('build',$.gulp.series(
 	'clean',
-	$.gulp.parallel('style:build', 'html:build', 'js:build', 'img:build', 'fonts', 's-png:build', 'svg')));
+    'favicon:generate',
+    $.gulp.parallel('style:build', 'html:build', 'js:build', 'img:build', 'fonts', 's-png:build', 'svg')));
 
 
 $.gulp.task('default',$.gulp.series(
