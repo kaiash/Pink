@@ -2,6 +2,7 @@ module.exports = function () {
     $.gulp.task('html:dev', ()=> {
         return $.gulp.src('./src/*.html')
             .pipe($.gp.rigger())
+            .pipe($.gp.realFavicon.injectFaviconMarkups(JSON.parse($.fs.readFileSync($.FAVICON_DATA_FILE)).favicon.html_code))
             .pipe($.gp.size({
                 title: 'HTML:dev'
             }))
@@ -13,11 +14,12 @@ module.exports = function () {
             }))
             .pipe($.gulp.dest('./build/'))
             .on('end',$.browserSync.reload);
-    });
+});
 
     $.gulp.task('html:build', function () {
         return $.gulp.src('src/*.html')
             .pipe($.gp.rigger())
+            .pipe($.gp.realFavicon.injectFaviconMarkups(JSON.parse($.fs.readFileSync($.FAVICON_DATA_FILE)).favicon.html_code))
             .pipe($.gp.size({
                 title: 'HTML:dev'
             }))

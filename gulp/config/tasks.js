@@ -8,5 +8,6 @@ module.exports = [
     './gulp/tasks/s-png',
     './gulp/tasks/serve',
     './gulp/tasks/style',
-    './gulp/tasks/watch'
+    './gulp/tasks/watch',
+    './gulp/tasks/favicon'
 ];
