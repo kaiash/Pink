@@ -6,6 +6,9 @@ module.exports = function () {
             .pipe($.gp.size({
                 title: 'HTML:dev'
             }))
+            .pipe($.gp.htmlhint('.htmlhintrc'))
+            .pipe(htmlhint.reporter("htmlhint-stylish"))
+            .pipe(htmlhint.failOnError({ suppress: true }))
             .on("error", $.gp.notify.onError(function(error) {
                 return {
                     title: "HTML ERROR",
@@ -23,6 +26,7 @@ module.exports = function () {
             .pipe($.gp.size({
                 title: 'HTML:dev'
             }))
+            .pipe($.gp.htmlhint('.htmlhintrc'))
             .pipe($.gulp.dest('./build/'))
             .pipe($.gp.htmlmin({collapseWhitespace: true}))
             .pipe($.gp.rename({suffix: '.min'}))
