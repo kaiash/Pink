@@ -7,8 +7,8 @@ module.exports = function () {
                 title: 'HTML:dev'
             }))
             .pipe($.gp.htmlhint('.htmlhintrc'))
-            .pipe(htmlhint.reporter("htmlhint-stylish"))
-            .pipe(htmlhint.failOnError({ suppress: true }))
+            .pipe($.gp.htmlhint.reporter("htmlhint-stylish"))
+            .pipe($.gp.htmlhint.failOnError({ suppress: true }))
             .on("error", $.gp.notify.onError(function(error) {
                 return {
                     title: "HTML ERROR",
@@ -27,6 +27,8 @@ module.exports = function () {
                 title: 'HTML:dev'
             }))
             .pipe($.gp.htmlhint('.htmlhintrc'))
+            .pipe($.gp.htmlhint.reporter("htmlhint-stylish"))
+            .pipe($.gp.htmlhint.failOnError({ suppress: true }))
             .pipe($.gulp.dest('./build/'))
             .pipe($.gp.htmlmin({collapseWhitespace: true}))
             .pipe($.gp.rename({suffix: '.min'}))
