@@ -8,7 +8,7 @@ module.exports = function () {
             }))
             .pipe($.gp.htmlhint('.htmlhintrc'))
             .pipe($.gp.htmlhint.reporter("htmlhint-stylish"))
-            .pipe($.gp.htmlhint.failOnError({ suppress: true }))
+            // .pipe($.gp.htmlhint.failOnError({ suppress: true }))
             .on("error", $.gp.notify.onError(function(error) {
                 return {
                     title: "HTML ERROR",

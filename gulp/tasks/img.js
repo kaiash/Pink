@@ -1,6 +1,6 @@
 module.exports = function () {
     $.gulp.task('img:dev', () => {
-        return $.gulp.src('./src/img/**/*.{png,jpg,gif}')
+        return $.gulp.src('./src/img/images/**/*.{png,jpg,gif}')
             .pipe($.gp.plumber())
             .pipe($.gp.size({
                 title: 'IMG:dev'
@@ -9,7 +9,7 @@ module.exports = function () {
     });
 
     $.gulp.task('img:build', () => {
-        return $.gulp.src('./src/img/**/*.{png,jpg,gif}')
+        return $.gulp.src('./src/img/images/**/*.{png,jpg,gif}')
             .pipe($.gp.plumber())
             .pipe($.gp.size({
                 title: 'IMG:build'
