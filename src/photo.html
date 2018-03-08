@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pink:Photo</title>
+  <link rel="preload" href="fonts/opensans.woff2" as="font">
+  <link rel="preload" href="fonts/opensansbold.woff2" as="font">
+  <link rel="preload" href="fonts/opensanslight.woff2" as="font">
+  <link rel="stylesheet" href="css/normalize.min.css">
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!--todo Style.css for dev only; remove or comment afterwards. Normalize min (gulp) - check it out-->
+</head>
+
+<body>
+//= include/_header.html
+<main class="main-content">
+  <section class="page-intro page-intro--inner">
+    <div class="container">
+      <h1 class="page-intro__title">Фотографии пользователей</h1>
+    </div>
+  </section>
+  
+  <section class="post-list">
+    <h2 class="visually-hidden">Посты пользователей</h2>
+    <div class="post-list__slogan-wrap">
+      <p class="post-list__slogan">Взгляните на фотографии, которые выкладывают пользователи! Видите, как не хватает
+        ваших?</p>
+    </div>
+    <article class="post-list__wrap post-list__wrap-panorama">
+      <h2 class="post-list__title">Панорама дня</h2>
+      <a class="post-list__photo post-list__photo--panorama" href="#">
+        <picture>
+          <source media="(min-width: 960px)" srcset="img/images/panorama-desktop@1x.jpg 1x,
+          img/images/panorama-desktop@2x.jpg 2x">
+          <source media="(min-width: 660px)" srcset="img/images/panorama-tablet@1x.jpg 1x,
+          img/images/panorama-tablet@2x.jpg 2x">
+          <img class="post-list__panorama" src="img/images/panorama-mobile@1x.jpg"
+               srcset="img/images/panorama-mobile@2x.jpg 2x" alt="Фотография пользователя">
+        </picture>
+      </a>
+      <div class="post-list__comment-wrap post-list__comment-wrap--panorama">
+        <div class="post-list__text-wrap post-list__text-wrap--panorama">
+          <p class="post-list__author">Анна
+            <time class="post-list__time" datetime="2018-02-07T19:08">(5 минут назад)</time>
+          </p>
+          <p class="post-list__text">Прыгать или нет?Напишите в коментарии свой совет и смотрите прямую трансляцию в
+            перископе, задавайте свои вопросы!</p>
+          <div class="post-list__like-wrap post-list__like-wrap--panorama">
+            <button class="post-list__btn" type="button"><span class="visually-hidden">Мне нравится</span></button>
+            <span class="post-list__likes">Нравится: 215</span>
+          </div>
+        </div>
+      </div>
+    </article>
+    //= include/photo_post-list__list.html
+  </section>
+  <section class="upload">
+    <h2 class="visually-hidden">Выложить свое фото</h2>
+    <div class="upload__slogan container">
+      <p class="upload__text">Затмите их всех!</p>
+      <p class="upload__text">Выкладывайте все, что накопилось в телефоне!</p>
+    </div>
+    <form class="upload__form" action="https://echo.htmlacademy.ru" method="get">
+      <div class="upload__form-wrap container">
+        <div class="upload__photo-wrap">
+          <picture>
+            <source media="(min-width: 960px)" srcset="img/images/photo-road-desktop@1x.jpg 1x,
+          img/images/photo-road-desktop@2x.jpg 2x">
+            <source media="(min-width: 660px)" srcset="img/images/photo-road-tablet@1x.jpg 1x,
+          img/images/photo-road-tablet@2x.jpg 2x">
+            <img src="img/images/photo-road-mobile@1x.jpg" srcset="img/images/photo-road-mobile@2x.jpg 2x"
+                 alt="Фотография пользователя">
+          </picture>
+        </div>
+        <div class="upload__tools-wrap">
+          <input class="upload__radio upload__radio--crop" type="radio" id="crop" name="toggle" checked>
+          <input class="upload__radio upload__radio--fill" type="radio" id="fill" name="toggle">
+          <input class="upload__radio upload__radio--contrast" type="radio" id="contrast" name="toggle">
+        <div class="upload__toggles">
+          <label class="upload__tool" for="crop">
+          <span class="visually-hidden">Обрезка</span>
+          <svg class="upload__icon" width="48px" height="48px">
+            <use xlink:href="img/icons/spriteSVG.svg#logo-icon-editor-crop"></use>
+          </svg>
+          </label>
+          <label class="upload__tool" for="fill">
+            <span class="visually-hidden">Заливка</span>
+            <svg class="upload__icon" width="48px" height="48px">
+              <use xlink:href="img/icons/spriteSVG.svg#logo-icon-editor-crop"></use>
+            </svg>
+          </label>
+          <label class="upload__tool" for="contrast">
+            <span class="visually-hidden">Контраст</span>
+            <svg class="upload__icon" width="31.92px" height="31.92px">
+              <use xlink:href="img/icons/spriteSVG.svg#icon-editor-contrast"></use>
+            </svg>
+          </label>
+        </div>
+          <button class="upload__btn upload__btn--post" type="submit">Запостить</button>
+          <button class="upload__btn upload__btn--cancel" type="reset">Отмена</button>
+        </div>
+      </div>
+    </form>
+  </section>
+</main>
+//= include/_footer.html
+</body>
+</html>

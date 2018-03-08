@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pink:Form</title>
+  <link rel="preload" href="fonts/opensans.woff2" as="font">
+  <link rel="preload" href="fonts/opensansbold.woff2" as="font">
+  <link rel="preload" href="fonts/opensanslight.woff2" as="font">
+  <link rel="stylesheet" href="css/normalize.min.css">
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!--todo Style.css for dev only; remove or comment afterwards. Normalize min (gulp) - check it out-->
+</head>
+
+<body>
+//= include/_header.html
+<main class="main-content">
+  <h1 class="visually-hidden">Приложение "Pink"</h1>
+  <section class="page-intro page-intro--inner">
+    <div class="container">
+      <h1 class="page-intro__title">Конкурс на самое безбашенное путешествие с
+        Пинк!</h1>
+    </div>
+  </section>
+  <section class="competition">
+    <h2 class="visually-hidden">Форма для участия в конкурсе</h2>
+    <div class="competition__slogan-wrap container">
+      <p class="competition__slogan">Поделитесь своей историей и получите шанс
+        выиграть ценный приз &#8212; 1000 миль на вашу бонусную карту!
+        <span class="competition__text">Пожалуйста, заполните форму ниже:</span>
+      </p>
+    </div>
+    <form class="competition__form form" action="https://echo.htmlacademy.ru"
+          method="post">
+      <fieldset class="form__user-name container">
+        <legend class="visually-hidden">ФИО</legend>
+        <ul class="form__list form__user-name-list">
+          <li class="form__user-name-item">
+            <label class="form__title" for="last-name">Фамилия</label>
+            <input class="form__field" type="text" name="last-name"
+                   id="last-name" placeholder="Укажите фамилию *">
+          </li>
+          <li class="form__user-name-item">
+            <label class="form__title" for="first-name">Имя</label>
+            <input class="form__field" type="text" name="first-name"
+                   id="first-name" placeholder="Введите ваше имя *">
+          </li>
+          <li class="form__user-name-item">
+            <label class="form__title" for="patronymic-name">Отчество</label>
+            <input class="form__field" type="text" name="patronymic-name"
+                   id="patronymic-name" placeholder="Ну и отчество тоже">
+          </li>
+        </ul>
+      </fieldset>
+      <div class="achievement">
+        <div class="container">
+          <fieldset class="form__part achievement__wrap">
+            <legend class="achievemnet__title">Ваши безбашенные достижения в
+              путешествии
+            </legend>
+            <div class="achievement__list">
+              <div class="achievement__column">
+                <div class="achievement__item">
+                  <input class="achievement__checkbox" type="checkbox"
+                         name="shark" id="selfie" checked>
+                  <label class="achievement__text" for="selfie">Сделал
+                    селфи с акулой</label>
+                </div>
+                <div class="achievement__item">
+                  <input class="achievement__checkbox" type="checkbox"
+                         name="shark" id="sunburn" checked>
+                  <label class="achievement__text" for="sunburn">Обгорел
+                  на пляже</label>
+                </div>
+                </div>
+              <div class="achievement__column">
+                <div class="achievement__item">
+                  <input class="achievement__checkbox" type="checkbox"
+                         name="shark" id="norris" checked>
+                  <label class="achievement__text" for="norris">Видел
+                    Чака Норриса</label>
+                </div>
+                <div class="achievement__item">
+                  <input class="achievement__checkbox" type="checkbox"
+                         name="shark" id="souvenirs" checked>
+                  <label class="achievement__text" for="souvenirs">Накупил
+                    сувениров
+                  </label>
+                </div>
+                </div>
+              <div class="achievement__column">
+                <div class="achievement__item">
+                  <input class="achievement__checkbox" type="checkbox"
+                         name="shark" id="tower" checked>
+                  <label class="achievement__text" for="tower">Удержал
+                    башню</label>
+                </div>
+                <div class="achievement__item">
+                  <input class="achievement__checkbox" type="checkbox"
+                         name="shark" id="hotel" checked>
+                  <label class="achievement__text" for="hotel">Разгромил
+                    отель
+                  </label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+      <div class="container form__user-contacts__wrap">
+        <fieldset class="form__user-contacts">
+          <legend class="form__title form__title--hidden">Контактная
+            информация
+          </legend>
+          <ul class="form__list form__contacts-list">
+            <li class="form__contacts-item form__contacts-item--tel">
+              <label class="form__title form__tittle--tel" for="tel">Номер
+                телефона
+              </label>
+              <input class="form__field" type="tel" name="tel" id="tel"
+                     placeholder="Номер, пожалуйста">
+            </li>
+            <li class="form__contacts-item form__contacts-item--email">
+              <label class="form__title form__tittle--email"
+                     for="email">Адрес почты
+              </label>
+              <input class="form__field" type="email" name="email" id="email"
+                     placeholder="Введите почту">
+            </li>
+          </ul>
+        </fieldset>
+      </div>
+      <div class="app-platform">
+        <div class="app-platform__wrapper container">
+          <fieldset class="form__part app-platform__wrap">
+            <legend class="app-platform__title">С каким приложением
+              путешествовали?
+            </legend>
+            <ul class="form__list app-platform__list">
+              <li class="app-platform__item">
+                <input class="app-platform__radio" type="radio"
+                       name="app-platform"
+                       id="ios" value="IOS" checked>
+                <label class="app-platform__text" for="ios">Pink для IOS</label>
+              </li>
+              <li class="app-platform__item">
+                <input class="app-platform__radio" type="radio"
+                       name="app-platform"
+                       id="android" value="android">
+                <label class="app-platform__text" for="ios">Pink для
+                  Android</label>
+              </li>
+              <li class="app-platform__item">
+                <input class="app-platform__radio" type="radio"
+                       name="app-platform"
+                       id="windows" value="windows">
+                <label class="app-platform__text" for="windows">Windows
+                  Phone</label>
+              </li>
+            </ul>
+          </fieldset>
+        </div>
+      </div>
+      <div class="container">
+        <fieldset class="form__text">
+          <legend class="form__title">Опишите свои эмоции</legend>
+          <textarea class="form__emotions" name="emotions" id="emotions"
+                    placeholder="Можно прям в красках, не стесняясь в выражениях"></textarea>
+        </fieldset>
+      </div>
+    </form>
+  </section>
+</main>
+//= include/_footer.html
+</body>
+</html>
