@@ -2,8 +2,8 @@ module.exports = function () {
     $.gulp.task('favicon:generate', function (done) {
         $.realFavicon.generateFavicon({
             masterPicture: './src/img/icons/favicon.png',
-            dest: './build/img/icons/favicon/',
-            iconsPath: 'img/icons/favicon/',
+            dest: './build/img/favicon/',
+            iconsPath: 'img/favicon/',
             design: {
                 ios: {
                     pictureAspect: 'backgroundAndMargin',

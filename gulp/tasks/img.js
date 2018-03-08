@@ -12,11 +12,12 @@ module.exports = function () {
         return $.gulp.src('./src/img/images/**/*.{png,jpg,gif}')
             .pipe($.gp.plumber())
             .pipe($.gp.size({
-                title: 'IMG:build'
+                title: 'IMG: before build'
             }))
             .pipe($.gp.imagemin([
                 $.gp.imagemin.gifsicle({interlaced: true}),
                 $.gp.imagemin.optipng({optimizationLevel: 3}),
+                $.gp.imagemin.jpegtran({progressive: true}),
                 $.imageminJpegRecompress({
                     loops:6,
                     min: 40,
@@ -30,8 +31,9 @@ module.exports = function () {
                     ]
                 })
             ]))
+            // .pipe($.gp.webp())
             .pipe($.gp.size({
-                title: 'IMG:build'
+                title: 'IMG after build'
             }))
             .pipe($.gulp.dest('./build/img/images/'))
     });
