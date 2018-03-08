@@ -32,6 +32,7 @@
     "gulp-load-plugins": "^1.5.0",
     "gulp-notify": "^3.2.0",
     "gulp-plumber": "^1.2.0",
+    "gulp-posthtml": "^3.0.4",
     "gulp-real-favicon": "^0.2.2",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.6.1",
@@ -44,6 +45,7 @@
     "gulp-svgstore": "^6.1.1",
     "gulp-uglify": "^3.0.0",
     "gulp-watch": "^5.0.0",
+    "gulp-webp": "^3.0.0",
     "gulp.spritesmith": "^6.9.0",
     "htmlhint-stylish": "^1.0.3",
     "imagemin-jpeg-recompress": "^5.1.0",
@@ -52,6 +54,7 @@
     "jshint-stylish": "^2.2.1",
     "merge-stream": "^1.0.1",
     "mustache": "^2.3.0",
+    "posthtml-include": "^1.1.0",
     "run-sequence": "^2.2.1",
     "vinyl-buffer": "^1.0.1"
   },
